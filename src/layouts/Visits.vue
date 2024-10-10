@@ -83,6 +83,8 @@ const refresh = defineModel("refresh");
 const totalVisits = defineModel("totalVisits");
 const exportTitle = defineModel("exportTitle");
 
+breadCrumbs.value = [ "Today's Visits" ];
+
 const exportFields = ref([
     { name: "Date time", selected: false },
     { name: "Visitor", selected: false },
