@@ -490,7 +490,6 @@ const checkParticipantIn = async () => {
         participant_id: participant_id.value,
     };
 
-    $sectionIsLoading.value = true;
     const response = await registerVisit(visitData);
     $sectionIsLoading.value = false;
 
@@ -530,6 +529,8 @@ const participantDetail = async (id) => {
 
     let visitorData;
 
+    $sectionIsLoading.value = true;
+	
     if (participant) {
         // Assign participant id for visit checking in
         participant_id.value = participant.id;
