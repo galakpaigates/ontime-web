@@ -106,11 +106,11 @@ const navItems = [
     },
     {
         name: "employees",
-        svg: "avatar",
+        svg: "employees",
     },
     {
         name: "users",
-        svg: "avatar",
+        svg: "administrator",
     },
     {
         name: "rooms",
