@@ -228,10 +228,13 @@ const fetchRoom = async () => {
             return;
         }
 
+        roomInfo = roomInfo.data;
+
         roomInfo.id = route.params.id;
-        name.value = roomInfo.data.name;
-        type.value = roomInfo.data.type;
-        code.value = roomInfo.data.code;
+        name.value = roomInfo.name;
+        type.value = roomInfo.type.charAt(0).toUpperCase() + roomInfo.type.slice(1);
+        code.value = roomInfo.code;
+
     }
 };
 
