@@ -10,8 +10,10 @@ router.beforeEach((to, from, next) => {
         to.fullPath != "/" &&
         API_KEY.value == ""
     ) {
-        API_KEY.value = jwtDecode(getCookie("token")).tenant_api_key;
+        const token = getCookie("token");
+        if (token) API_KEY.value = jwtDecode(token).tenant_api_key;
     }
+
 
     if (to.matched.some((record) => record.meta.requiresAuth)) {
         if (!isAuthenticated()) {
