@@ -96,7 +96,7 @@ const options = {
             totalRooms.value = totalLength;
 
             rooms.forEach((room) => {
-                room.address = formatAddress(room.address);
+		room.type = room.type.charAt(0).toUpperCase() + room.type.slice(1);
                 room.created_at = formatDateTime(room.created_at, {
                     date: true,
                 });
@@ -178,20 +178,6 @@ watch(
         tableKey.value += 1;
     }
 );
-
-function formatAddress(address) {
-    if (!address) {
-        return "";
-    }
-
-    const addressLen = address.length;
-    const newAddress =
-        addressLen >= MAX_DETAIL_LEN
-            ? `${address.slice(0, MAX_DETAIL_LEN)}...`
-            : address;
-
-    return newAddress;
-}
 
 const filterInfo = computed(() => {
     return `Showing rooms ${
